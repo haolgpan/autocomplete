@@ -15,16 +15,8 @@ A simple Java application that suggests words as you type, similar to a search e
 
 ## Project Structure
 
-project/
-├── src/
-│ ├── main/
-│ │ └── java/
-│ │ ├── TextPredictor.java # Core prediction logic
-│ │ ├── UserInterface.java # Swing UI implementation
-│ │ └── Main.java # Application entry point
-│ └── test/
-│   └── java/
-│       └── TextPredictorTest.java 
+“`## Project Structure` project/ ├── src/ │ ├── main/ │ │ └── java/ │ │ ├── TextPredictor.java │ │ ├── UserInterface.java │ │ └── Main.java │ └── test/ │ └── java/ │ └── TextPredictorTest.java Copiar código”
+
 
 
 ## Running the Application
