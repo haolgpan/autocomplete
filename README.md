@@ -1,6 +1,6 @@
 # Autocomplete
 
-A simple Java application that suggests words as you type, similar to a search engine's autocomplete feature.
+A simple Java application that suggests words as you type, similar to a search engine's autocomplete feature. The suggestions are sorted alphabetically.
 
 ## Features
 - Shows up to 4 suggestions in alphabetical order
@@ -24,7 +24,7 @@ project/
 │ │ └── Main.java # Application entry point
 │ └── test/
 │   └── java/
-│       └── TextPredictorTest.java # Unit tests
+│       └── TextPredictorTest.java 
 
 
 ## Running the Application
