@@ -62,7 +62,10 @@ project/
 - Non-matching searches
 
 ## Screenshots
-![Autocomplete Demo](screenshots/autocomplete1.jpeg)
+![Autocomplete Demo1](screenshots/autocomplete1.jpeg)
+![Autocomplete Demo2](screenshots/autocomplete2.jpeg)
+![Autocomplete Demo3](screenshots/autocomplete3.jpeg)
+![Autocomplete Demo4](screenshots/autocomplete4.jpeg)
 
 ## License
 MIT License - feel free to use this code for any purpose.
