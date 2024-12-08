@@ -41,17 +41,6 @@ project/
 3. Right-click on `Main.java`
 4. Select "Run 'Main.main()'"
 
-## Running Tests
-
-### Using VS Code
-1. Open `TextPredictorTest.java`
-2. Click the "Run Test" button above any test method
-3. Or use the Test Explorer in VS Code
-
-### Using IntelliJ IDEA
-1. Open `TextPredictorTest.java`
-2. Click the green play button next to the class or individual test
-3. Or right-click on the test folder and select "Run Tests"
 
 ## Test Cases
 - Empty input
