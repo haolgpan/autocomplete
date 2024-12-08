@@ -49,7 +49,7 @@ public class TextPredictorTest {
 
     @Test
     public void testMaxFourResults() {
-        List<String> results = predictor.getSuggestions("pro");
+        List<String> results = predictor.getSuggestions("p");
         assertTrue("Should not return more than 4 results", results.size() <= 4);
     }
 

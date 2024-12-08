@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class TextPredictor {
-    // List of words to search from
+    // Static array of words to search from - could be replaced with a database or file in a production environment
     private static final String[] WORDS = {
         "Pandora", "Pinterest", "Paypal", "Pg&e", "Project free tv", 
         "Priceline", "Press democrat", "Progressive", "Project runway",
@@ -10,27 +10,41 @@ public class TextPredictor {
         "Bowl", "Owl", "River", "Phone", "Kayak", "Stamps", "Reprobe"
     };
     
+    // Reuse the same list instance to avoid creating new objects on each method call
+    private final List<String> suggestions = new ArrayList<>();
+
     /**
      * Returns up to 4 word suggestions that start with the given prefix
      * @param prefix The string to search for
-     * @return List of matching words, sorted alphabetically
+     * @return List of matching words, sorted alphabetically (limited to 4 items)
+     * 
+     * Note: Returns the same List object each time, cleared and repopulated
+     * for efficiency. The caller should not store or modify the returned list.
+     * Thread safety: This method is not thread-safe due to the reused list.
      */
     public List<String> getSuggestions(String prefix) {
-        List<String> suggestions = new ArrayList<>();
+        // Clear existing suggestions instead of creating a new list
+        suggestions.clear();
         
+        // Return empty list for null or empty input
         if (prefix == null || prefix.isEmpty()) {
             return suggestions;
         }
 
-        // Search case-insensitive
+        // Convert to lowercase once for case-insensitive comparison
         prefix = prefix.toLowerCase();
+        
+        // Collect all matching words
         for (String word : WORDS) {
             if (word.toLowerCase().startsWith(prefix)) {
                 suggestions.add(word);
             }
         }
         
+        // Sort all matches alphabetically before limiting to 4 items
         Collections.sort(suggestions);
+        
+        // Return either all matches (if 4 or fewer) or just the first 4
         return suggestions.size() <= 4 ? suggestions : suggestions.subList(0, 4);
     }
 } 
