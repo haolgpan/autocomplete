@@ -10,6 +10,11 @@ public class TextPredictor {
         "Bowl", "Owl", "River", "Phone", "Kayak", "Stamps", "Reprobe"
     };
     
+    // Lowercase version of WORDS for efficient comparison
+    private static final String[] WORDS_LOWERCASE = Arrays.stream(WORDS)
+            .map(String::toLowerCase)
+            .toArray(String[]::new);
+    
     // Reuse the same list instance to avoid creating new objects on each method call
     private final List<String> suggestions = new ArrayList<>();
 
@@ -34,10 +39,10 @@ public class TextPredictor {
         // Convert to lowercase once for case-insensitive comparison
         prefix = prefix.toLowerCase();
         
-        // Collect all matching words
-        for (String word : WORDS) {
-            if (word.toLowerCase().startsWith(prefix)) {
-                suggestions.add(word);
+        // Collect all matching words using pre-computed lowercase versions
+        for (int i = 0; i < WORDS.length; i++) {
+            if (WORDS_LOWERCASE[i].startsWith(prefix)) {
+                suggestions.add(WORDS[i]);
             }
         }
         

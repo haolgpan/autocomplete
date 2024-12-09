@@ -47,7 +47,8 @@ public class UserInterface extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
     }
-
+    
+    //Updates the suggestion list based on the input text
     private void updateSuggestions() {
         String input = inputField.getText();
         List<String> suggestions = predictor.getSuggestions(input);
