@@ -6,7 +6,7 @@ public class TextPredictor {
     private static final String[] WORDS_LOWERCASE;
     
     static {
-        String[] tempWords = {
+        String[] keywords = {
             "Pandora", "Pinterest", "Paypal", "Pg&e", "Project free tv", 
             "Priceline", "Press democrat", "Progressive", "Project runway",
             "Proactive", "Programming", "Progeria", "Progesterone", "Progenex", 
@@ -15,8 +15,8 @@ public class TextPredictor {
         };
 
         // Sort the words alphabetically
-        Arrays.sort(tempWords);
-        WORDS = tempWords;
+        Arrays.sort(keywords);
+        WORDS = keywords;
         
         // Convert to lowercase for case-insensitive comparison
         WORDS_LOWERCASE = Arrays.stream(WORDS)
