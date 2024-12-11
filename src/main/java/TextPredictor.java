@@ -1,5 +1,10 @@
 import java.util.*;
 
+/**
+ * Provides word prediction functionality for the autocomplete feature.
+ * Uses a sorted array of words to efficiently find and return suggestions
+ * that match a given prefix.
+ */
 public class TextPredictor {
     // Static array of words to search from - could be replaced with a database or file in a production environment
     private static final String[] WORDS;
@@ -14,17 +19,14 @@ public class TextPredictor {
             "Bowl", "Owl", "River", "Phone", "Kayak", "Stamps", "Reprobe"
         };
 
-        // Sort the words alphabetically
         Arrays.sort(keywords);
         WORDS = keywords;
         
-        // Convert to lowercase for case-insensitive comparison
         WORDS_LOWERCASE = Arrays.stream(WORDS)
                 .map(String::toLowerCase)
                 .toArray(String[]::new);
     }
     
-    // Reuse the same list instance to avoid creating new objects on each method call
     private final List<String> suggestions = new ArrayList<>();
 
     /**
@@ -40,12 +42,10 @@ public class TextPredictor {
         // Clear existing suggestions instead of creating a new list
         suggestions.clear();
         
-        // Return empty list for null or empty input
         if (prefix == null || prefix.isEmpty()) {
             return suggestions;
         }
 
-        // Convert to lowercase once for case-insensitive comparison
         prefix = prefix.toLowerCase();
         
         // Find first matching index using binary search
