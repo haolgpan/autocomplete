@@ -5,9 +5,8 @@ import java.util.List;
 
 public class UserInterface extends JFrame {
     private JTextField inputField;
-    private JList<String> suggestionList;
     private DefaultListModel<String> listModel;
-    private TextPredictor predictor;
+    private final TextPredictor predictor;
 
     public UserInterface() {
         predictor = new TextPredictor();
@@ -28,7 +27,7 @@ public class UserInterface extends JFrame {
 
         // List to show suggestions
         listModel = new DefaultListModel<>();
-        suggestionList = new JList<>(listModel);
+        JList<String> suggestionList = new JList<>(listModel);
         JScrollPane scrollPane = new JScrollPane(suggestionList);
 
         // Add panels to frame
